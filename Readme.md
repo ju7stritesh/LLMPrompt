@@ -1,9 +1,9 @@
 This repo is created to use the latest in AI research that is readily available from Hugging face's transformer library and other sources using just a few lines of code.
 The models are chosen based on the ease of use and their performance. There may be better models and results but those may require multiple GPUs and the results are sometimes only slightly better the ones below.
 
-#Image classification using zero shot detection
+## Image classification using zero shot detection
 
-Filename - image_prompt_zero_sort.py
+### Filename - image_prompt_zero_sort.py
 The CLIP model was developed by researchers at OpenAI to learn about what contributes to robustness in computer vision tasks. 
 The model was also developed to test the ability of models to generalize to arbitrary image classification tasks in a zero-shot manner. 
 It was not developed for general model deployment - to deploy models like CLIP, 
@@ -27,7 +27,9 @@ human: 0.00047253008
 Limitations:
 The likelihood of human detection decreases significantly when the bus is included, as demonstrated above.
 
-Filename - image_gen.py
+## Generate Images using prompts
+
+### Filename - image_gen.py
 The Segmind Stable Diffusion Model (SSD-1B) is a distilled 50% smaller version of the Stable Diffusion XL (SDXL), 
 offering a 60% speedup while maintaining high-quality text-to-image generation capabilities. It has been trained on diverse datasets, 
 including Grit and Midjourney scrape data, to enhance its ability to create a wide range of visual content based on textual prompts.
@@ -38,11 +40,13 @@ _Note : We can reduce the image size to run on smaller GPUs and reduce the numbe
 
 Input : prompt = "A cute cat"
 neg_prompt = "ugly, blurry, poor quality"
- Output:![cat.jpg](cat.jpg)
+ Output: ![test.jpg](test.jpg)
 
 Limitations : Realism in human depictions, larger GPU requirement for better results, understanding of input prompt.
 
-Filename - semantic_similarity.py
+## Find similarity using embeddings
+
+### Filename - semantic_similarity.py
 This is a sentence-transformers model: 
 It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
 
@@ -66,14 +70,18 @@ The new movie is so great 		 Do you like pizza? 		 Score: 0.1692
 The cat sits outside 		 A woman watches TV 		 Score: 0.1310
 The cat plays in the garden 		 Do you like pizza? 		 Score: 0.0900
 
-Filename - image_to_text.py
+## Understanding an image using generative AI
+
+### Filename - image_to_text.py
 The VisionEncoderDecoderModel can be used to initialize an image-to-text model with any pretrained Transformer-based vision model as the encoder (e.g. ViT, BEiT, DeiT, Swin) and any pretrained language model as the decoder (e.g. RoBERTa, GPT2, BERT, DistilBERT).
 
 The effectiveness of initializing image-to-text-sequence models with pretrained checkpoints has been shown in
 Input : ![bus.jpg](bus.jpg)
 Output ['a bus stops at a bus stop to pick up passengers']
 
-Filename : sentiment_analysis.py
+## Analyze sentiments from text
+
+## Filename : sentiment_analysis.py
 Label text according to some polarity like positive or negative which can inform and support decision-making in fields like politics, finance, and marketing
 Emotions can be analyzed using an open source library like text2emotion
 
@@ -85,7 +93,9 @@ d = "I am gonna kil you"
 Output : [{'label': 'POSITIVE', 'score': 0.9998785257339478}, {'label': 'NEGATIVE', 'score': 0.9994907379150391}, {'label': 'POSITIVE', 'score': 0.9986440539360046}, {'label': 'POSITIVE', 'score': 0.9968469738960266}]
 {'Happy': 0.0, 'Angry': 0.0, 'Surprise': 0.0, 'Sad': 1.0, 'Fear': 0.0}
 
-Filename : zero_shot_text_classify.py
+## Classify texts from suggestive labels
+
+### Filename : zero_shot_text_classify.py
 
 This model was trained on the MultiNLI, Fever-NLI and Adversarial-NLI (ANLI) datasets, which comprise 763 913 NLI hypothesis-premise pairs. This base model outperforms almost all large models on the ANLI benchmark. The base model is DeBERTa-v3-base from Microsoft. The v3 variant of DeBERTa substantially outperforms previous versions of the model by including a different pre-training objective
 
